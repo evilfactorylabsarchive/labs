@@ -1,12 +1,14 @@
 const app = require('express')()
 const fetch = require('node-fetch')
 const bodyParser = require('body-parser')
+const pino = require('express-pino-logger')
 
 // Monkey patch 🤟  https://github.com/ccxt/ccxt/issues/3751#issuecomment-465642911
 require('tls').DEFAULT_ECDH_CURVE = 'auto'
 
 const PORT = process.env.PORT || 3000
 
+app.use(pino())
 app.use(bodyParser.json())
 
 app.post('/join', (req, res) => {
