@@ -1,6 +1,9 @@
 {
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "1.18.3",
     "express": "4.16.4",
