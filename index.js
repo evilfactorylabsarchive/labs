@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000
 app.use(pino())
 app.use(bodyParser.json())
 
-app.post('/join', (req, res) => {
+app.post('/', (req, res) => {
   const { name, role, github, email, portfolios, notes } = req.body
   const template = `
   Someone want to join!
