@@ -1,0 +1,11 @@
+{
+    "version": 2,
+    "name": "@evilfactory/labs",
+    "alias": "evilfactorylabs.now.sh",
+    "builds": [
+      { "src": "**/*.js", "use": "@now/node" }
+    ],
+    "env": {
+      "PUSHMORE_WEBHOOK_ID": "@pushmore-webhook-id"
+    }
+}
