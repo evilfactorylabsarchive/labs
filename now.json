@@ -1,7 +1,6 @@
 {
     "version": 2,
-    "name": "@evilfactory/labs",
-    "alias": "evilfactorylabs.now.sh",
+    "name": "join",
     "builds": [
       { "src": "**/*.js", "use": "@now/node" }
     ],
