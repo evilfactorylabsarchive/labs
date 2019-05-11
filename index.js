@@ -1,4 +1,5 @@
 const app = require('express')()
+const helmet = require('helmet')
 const fetch = require('node-fetch')
 const bodyParser = require('body-parser')
 const pino = require('express-pino-logger')
@@ -8,10 +9,11 @@ require('tls').DEFAULT_ECDH_CURVE = 'auto'
 
 const PORT = process.env.PORT || 3000
 
+app.use(helmet())
 app.use(pino())
 app.use(bodyParser.json())
 
-app.post('/join', (req, res) => {
+app.post('/', (req, res) => {
   const { name, role, github, email, portfolios, notes } = req.body
   const template = `
   Someone want to join!
@@ -40,4 +42,4 @@ app.get('/', (_, res) => {
   res.send({ checkThis: 'https://evilfactory.id/join/' })
 })
 
-app.listen(PORT)
+module.exports = app

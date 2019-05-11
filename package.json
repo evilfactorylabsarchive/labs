@@ -8,6 +8,7 @@
     "body-parser": "1.18.3",
     "express": "4.16.4",
     "express-pino-logger": "4.0.0",
+    "helmet": "3.18.0",
     "node-fetch": "2.3.0"
   },
   "engines": {
