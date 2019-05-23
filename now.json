@@ -1,10 +1,8 @@
 {
-    "version": 2,
-    "name": "join",
-    "builds": [
-      { "src": "**/*.js", "use": "@now/node" }
-    ],
-    "env": {
-      "PUSHMORE_WEBHOOK_ID": "@pushmore-webhook-id"
-    }
+  "version": 2,
+  "name": "join",
+  "builds": [{ "src": "**/*.js", "use": "@now/node" }],
+  "env": {
+    "DISCORD_WEBHOOK_ID": "@discord-webhook-id"
+  }
 }

@@ -4,10 +4,7 @@ const fetch = require('node-fetch')
 const bodyParser = require('body-parser')
 const pino = require('express-pino-logger')
 
-// Monkey patch 🤟  https://github.com/ccxt/ccxt/issues/3751#issuecomment-465642911
-require('tls').DEFAULT_ECDH_CURVE = 'auto'
-
-const PORT = process.env.PORT || 3000
+const { DISCORD_WEBHOOK_ID } = process.env
 
 app.use(helmet())
 app.use(pino())
@@ -26,9 +23,13 @@ app.post('/', (req, res) => {
 
   Notes: ${notes}
 `
-  fetch('https://pushmore.io/webhook/' + process.env.PUSHMORE_WEBHOOK_ID, {
+
+  fetch('https://discordapp.com/api/webhooks/' + DISCORD_WEBHOOK_ID, {
     method: 'POST',
-    body: template
+    body: JSON.stringify({ content: template }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   })
     .then(res => res.text())
     .then(() => res.send({ thanks: 'We will getting in touch with you soon' }))
