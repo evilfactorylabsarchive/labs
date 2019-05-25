@@ -9,7 +9,7 @@
     "express": "4.17.0",
     "express-pino-logger": "4.0.0",
     "helmet": "3.18.0",
-    "node-fetch": "2.3.0"
+    "node-fetch": "2.6.0"
   },
   "engines": {
     "node": ">= 8.4.1"
